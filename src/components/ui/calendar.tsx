@@ -41,8 +41,8 @@ function Calendar({
         ),
         day_range_end: "day-range-end",
         day_selected:
-          "bg-emerald-400 text-[#FAF9F8]",
-        day_today: "bg-emerald-400 text-[#FAF9F8]",
+          "bg-gray-100 text-[#FAF9F8]",
+        day_today: "text-[#525150] border border-[#07CA9E]",
         day_outside:
           "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
         day_disabled: "text-muted-foreground opacity-50",
