@@ -1,28 +1,43 @@
 "use client"
 
-import { Calendar } from '@/components/ui/calendar'
+// import { Calendar } from '@/components/ui/calendar'
 // import CardContainer from '@/components/ui/CardContainer'
 import React, { useState } from 'react'
 import Select from 'react-select'
-useState
+import {format} from 'date-fns';
+import { DateFormatter, DayPicker} from 'react-day-picker';
+// import 'react-day-picker/dist/style.css';
+import './day-picker.css'
 
 type Props = {}
 
 const ElementFour = (props: Props) => {
   
-  const [date, setDate] = React.useState<Date | undefined>(new Date())
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  // rendering my date
+  const current = new Date();
+  const date = `${current.toLocaleString("en-US", {month: "short"})}. ${current.getDate()}, ${current.getFullYear()}.`;
   const [value, setValue] = useState(null);
   const options = [
     {value:"TOPIC BASED TEST", label: "Topic Based Test"},
     {value:"SCIENCE BASED TEST", label: "Science Based Test"},
     {value:"CoOMPUTER BASED TEST", label: "Computer Based Test"}
   ]
+
+  const formatWeekdayName: DateFormatter = (date, options) => (
+    <>
+      {format(new Date(date), 'EEE', {locale: options?.locale})}
+    </>
+  )
   return (
     <div className='w-[35%]'>
-        <div  className='bg-[#07CA9E] flex items-center justify-center rounded-md gap-6 py-2'>
+        <div className='bg-[#07CA9E] flex items-center justify-center rounded-md gap-6 py-2'>
         <div className='text-[#FAF9F8] font-bold'>
           <h5 className='text-lg' >Schedule Test</h5>
-          <p className='text-sm'>Date Picked</p>
+          {/* <p className='text-sm'>Date Picked.</p> */}
+          {
+            selectedDate ? <p className='text-sm'>{format(selectedDate, 'PP')}</p> : <p className='text-sm'>{date}</p>
+          }
         </div>
         <div className='w-[50%]'>
           <Select
@@ -70,12 +85,25 @@ const ElementFour = (props: Props) => {
           />
         </div>
       </div>
-      <div>
-        <Calendar
+      <div className='w-full border-[1.5px] border-[#CDCBC9] mt-3 rounded-md'>
+        {/* <Calendar
           mode="single"
           selected={date}
           onSelect={setDate}
           className="rounded-md border-[1.5px] mt-3 border-[#CDCBC9] w-[100%]"
+        /> */}
+        <DayPicker
+          className='flex items-center justify-center'
+          mode='single'
+          selected={selectedDate}
+          onSelect= {setSelectedDate}
+          showOutsideDays
+          fixedWeeks
+          styles={{
+            caption_label: {color: '#525150', fontSize: '14px'},
+            head_cell: {color: '#525150', fontSize: '12px', textTransform:'revert'},
+          }}
+          formatters={{formatWeekdayName}}
         />
       </div>
     </div>
