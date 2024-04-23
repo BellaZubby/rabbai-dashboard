@@ -44,3 +44,31 @@ export interface ScoreboardEnrolledType {
 export interface ScoreboardSuccessRateType {
   rate: number
 }
+export interface TopicSubjectsType {
+  subject: string
+}
+export interface headerType {
+  header: string;
+}
+export interface detailsType {
+  subject: string;
+  topic: number;
+  pastQuestion: number;
+  successRate: number;
+
+}
+
+export interface OverallDetailType {
+  subject: string;
+  topic: number;
+  question: number;
+  signIn: number;
+  enrolled: number;
+  successRate: number
+
+}
+
+export interface ratingType {
+  subject: string;
+  score: number;
+}

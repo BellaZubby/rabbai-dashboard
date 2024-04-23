@@ -1,7 +1,6 @@
 import ScoreBoard from '@/components/ScoreBoard'
 import ScoreBoardPie from '@/components/ScoreBoardPie'
 import CardContainer from '@/components/ui/CardContainer'
-import ScoreBoardEnrolled from '@/components/ui/ScoreBoardEnrolled'
 import React from 'react'
 
 type Props = {}

@@ -17,7 +17,7 @@ type Props = {}
 const SubjectUpload = (props: Props) => {
    
   return (
-    <div>
+    <div className='w-[60%]'>
     <CardContainer className='shadow-none h-64'>
         <h4 className='text-[#525150] font-bold text-sm'>Subject Upload Overview</h4>
         <div className='flex py-3'>

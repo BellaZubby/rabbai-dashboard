@@ -1,9 +1,9 @@
 "use client"
 import React, { useState } from 'react'
 import ParentContainer from '@/components/ui/parentContainer'
-import { AwardIcon, ImageIcon, FilePlus } from 'lucide-react'
+import { AwardIcon, ImageIcon, FilePlus, FileQuestion, FileUp, XIcon } from 'lucide-react'
 import Image from 'next/image'
-import books from '@/assets/subjects.png'
+import question from '@/assets/question.png'
 import logo from '@/assets/ic_baseline-whatsapp.svg'
 import { Trash2, Edit3, CirclePlus} from 'lucide-react'
 import CardContainer from '@/components/ui/CardContainer'
@@ -16,6 +16,22 @@ const SubjectPage = (props: Props) => {
   const [showForm, setShowForm] = useState(false);
   const [pageOpen, setPageOpen] = useState(false);
   const [output, setOutput] = useState([{image:"", title: "", description: ""}]);
+  const [file, setFile] = useState(null);
+
+  // for dragOver
+  const handleDragOver = (e:any) => {
+    e.preventDefault();
+    const selectedFile = e.target.files[0];
+    if(selectedFile) {
+      setFile(selectedFile.name);
+    }
+  };
+
+  // to clear file
+  const handleClearFile = () => {
+    setFile(null);
+  };
+
 
   const handleOutputAdd = () => {
     setOutput([...output, {image: "", title: "", description:""}] )
@@ -54,81 +70,53 @@ const SubjectPage = (props: Props) => {
   
   return (
     <div className='w-[95%] mx-auto'>
-        <h4 className='text-[#525150] font-bold text-[16px] mb-5 ml-7'>Subjects</h4>
-  <div className=''>
+        <h4 className='text-[#525150] font-bold text-[16px] mb-5 ml-7'>Questions</h4>
+  <div className='w-full'>
   {
             showForm ? (
-              <ParentContainer className={pageOpen ? "hidden": "drop-shadow-md h-[460px] bg-[#FDFDFC] flex flex-row items-center justify-center gap-5 pt-7"}>
+              <ParentContainer className={pageOpen ? "hidden": "drop-shadow-md h-auto bg-[#FDFDFC] flex flex-row items-center justify-center gap-5 pt-7"}>
                 {/* image */}
-                <Image src={books} alt='books' className='w-[45%] h-5/6 object-cover rounded-lg'/>
-                <div className="bg-[#CDCBC9] w-[0.5px] h-5/6"></div>
+                <Image src={question} alt='books' className='w-[45%] h-5/6 object-cover rounded-lg ml-6'/>
                 
-                <div className="" >
-                  <div className=" text-[#525150] text-center mb-3" >
-                    <h6 className="text-lg font-bold mb-3">Subjects Creation</h6>
-                    <p className=" text-sm font-medium">Subject Details</p>
+                <div className="w-[50%]" >
+                  <div className="text-center" >
+                    <h6 className="text-sm font-bold mb-1 text-[#333333]">Question Creation</h6>
+                    <p className=" text-lg font-medium text-[#333333]">Create Questions</p>
+                    <p className='text-center mt-3 text-[#666666] text-sm'>Upload Past Question</p>
                   </div>
-                <form className="flex flex-col">
-                  <div className='flex flex-col'>
-                    <label htmlFor="subject-title" className="text-[#525150] text-sm mb-2">Subject Title</label>
-                    <input id="suject-title" name="subject-title" type="text" required className="text-[#525150] text-lg border py-1 border-[#CDCBC9] rounded-md"/>
-                  </div>
-                  <div className="flex flex-col mt-2">
-                    <label htmlFor="description" className="text-[#525150] text-sm mb-2">Description</label>
-                    <textarea id="cert-decription" rows={4} cols={50} required className="text-[#525150] rounded-md border border-[#CDCBC9] text-lg"></textarea>
-                  </div>
-                  <div className="flex flex-col mt-2">
-                    <label htmlFor='subject-certifications' className='text-[#525150] text-sm'>Certification</label>
-                    <Select
+                 
+                 <div className='mt-3 border-[1.5px] border-[#525150] border-dashed rounded-lg w-[60%] mx-auto h-[300px] flex flex-col items-center justify-center'>
+                  {
+                    file ? 
+                    (<>
+                        <div className='relative flex flex-col items-center border p-3 bg-[#c9c9c9]'>
+                          <p className='text-xs'>{file}</p>
+                          <button onClick={handleClearFile} className='absolute top-[-7px] right-[-7px]'><XIcon className='w-4 h-4 text-[#525150]'/></button>
+                        </div>
+                    
+                    
+                    </>) : 
+                    
+                    
+                    (<>
 
-            options={options}
-            defaultValue={value}
-            onChange={() => setValue}
-            placeholder=""
-            isSearchable
-            isMulti
+                        <label htmlFor='dragdrop-file' className='cursor-pointer'>
 
-            styles={{
-              placeholder: (baseStyles, state) => ({
-                ...baseStyles,
-                fontSize: 12,
-                color: "#C9C9C9"
-              }),
-              dropdownIndicator : (baseStyles) => ({
-                ...baseStyles,
-                color: "#4D4D4D",
-                backgroundColor: "FAF9F8"
-              }),
-              container: (baseStyles) => ({
-                ...baseStyles,
-                borderColor: "transparent"
-              }),
-              option: (baseStyles) => ({
-                ...baseStyles,
-                color: "#666666",
-                fontSize: 15,
-                fontWeight: 400,
-                backgroundColor: "transparent"
-              }),
-              valueContainer: (baseStyles) => ({
-                ...baseStyles,
-                borderColor: "transparent",
-                backgroundColor: "FAF9F8"
-              }),
-              singleValue: (baseStyles) => ({
-                ...baseStyles,
-                color: "#666666",
-                fontSize: 15,
-                fontWeight: 400
-              })
-            }}
-          />
-                  </div>
-                  
-                  <button type="submit" onClick={handlePageOpen} className="text-[#FFFFFF] text-sm font-medium cursor-pointer bg-[#0086FF] rounded-md w-[50%] mx-auto mt-4 py-3">Create Subject</button>
-                </form>
+                          <div className='flex flex-col items-center gap-2'>
+                          <FileUp className='text-[#282A37]'/>
+                          <p className='text-[#282A37] text-xs font-bold'>Drag & Drop or <span className='text-[#0086FF]'>choose</span> file to upload</p>
+                          <p className='text-[#515978] text-xs'>Select pdf, ms.word, csv</p>
+                          </div>
+                          
+                        </label>
+                        <input id='dragdrop-file' type='file' className='hidden' onChange={handleDragOver} multiple/>
+                        
+                    
+                    </>)
+                  }
+                 </div>
+                 <div className='text-center'><button onClick={handlePageOpen} className='bg-[#0086FF] text-[#FFFFFF] text-xs font-bold py-2 px-3 mt-4 rounded-lg'>Manually Input Past Question</button></div>
                 </div>
-
                 
                 
                
@@ -136,15 +124,28 @@ const SubjectPage = (props: Props) => {
       
             </ParentContainer>
             ): (
-            <ParentContainer className='drop-shadow-md h-screen bg-[#FDFDFC] relative'>
-                <div className='absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex flex-col items-center gap-5'>
-                    <FilePlus className='w-12 h-12 text-[#525150]'/>
-                    <h4 className='text-[#525150] font-bold text-lg'>Subjects</h4>
-                    <p className='text-[#525150]'>Opps...There is no subject here...</p>
-                    <button onClick={handleDisplayForm} className='bg-[#0086FF] text-[#FDFDFC] font-bold text-sm py-2 px-6 w-5/6 rounded-md'>Create Subject</button>
-                    <div className='bg-[#C8CDD6] w-[17%] h-1 rounded-3xl'></div>
+                <ParentContainer className="drop-shadow-md h-screen bg-[#FDFDFC] relative flex flex-col items-center justify-center gap-3">
+                <FileQuestion className="w-12 h-12 text-[#525150]" />
+                <h4 className="text-[#525150] font-bold text-lg">Questions</h4>
+                <div className="text-center mb-1">
+                  <p className="text-[#525150] font-bold">
+                    You don't have any questions yet...
+                  </p>
+                  <p className="text-[#525150]">
+                    Click{" "}
+                    <span className="text-[#525150] font-bold">Create Your First Question</span>{" "}
+                    to Create Your First Question
+                  </p>
                 </div>
-            </ParentContainer>
+    
+                <button
+                  onClick={handleDisplayForm}
+                  className="bg-[#0086FF] text-[#FDFDFC] font-bold text-sm py-2 px-6 w-[23%] rounded-md mb-2 "
+                >
+                  Create Your First Question
+                </button>
+                <div className="bg-[#C8CDD6] w-[5%] h-1 rounded-3xl"></div>
+              </ParentContainer>
             )
         }
 

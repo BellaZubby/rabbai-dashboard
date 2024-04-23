@@ -5,6 +5,7 @@ import SubjectSummary from './ElementTwo'
 import ElementThree from './ElementThree'
 import ElementFour from './ElementFour'
 import ElementFive from './ElementFive'
+import ParentContainer from '@/components/ui/parentContainer'
 
 type Props = {
     
@@ -14,11 +15,11 @@ const Dashboard = (props: Props) => {
   return (
     <div className='flex flex-col gap-5 w-full'>
        <PageTitle title='Dashboard' name='Mark'/>
-       <div className='border border-[#C9C9C9] rounded-lg w-full h-auto pb-7'>
+       <ParentContainer>
         <div className='w-[95%] mx-auto mt-5'>
         {/* first column */}
 
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='flex gap-4'>
           <SubjectUpload/>
           <SubjectSummary/>
         </div>
@@ -33,7 +34,7 @@ const Dashboard = (props: Props) => {
           <ElementFive/>
         </div>
        </div>
-       </div>
+       </ParentContainer>
     </div>
   )
 }

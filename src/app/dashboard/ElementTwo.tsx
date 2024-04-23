@@ -1,117 +1,96 @@
-import CardContainer from '@/components/ui/CardContainer'
-import React from 'react'
-import { PastQuestionType, SubjectType, SuccessRateType, TopicType } from '../shared/types'
-import SubjectsComponent from '@/components/SubjectComponent'
-import TopicsComponent from '@/components/TopicsComponent'
-import PastQuestionComponent from '@/components/PastQuestionComponent'
-import SuccessRateComponent from '@/components/SuccessRateComponent'
-type Props = {}
+import CardContainer from "@/components/ui/CardContainer";
+import React from "react";
+import {
+  detailsType,
+  headerType,
+} from "../shared/types";
+type Props = {};
 
-const Subjects: Array<SubjectType> = [
-  {
-    subject: 'Mathematics'
-  },
-  {
-    subject: 'English'
-  },
-  {
-    subject: 'Physics'
-  },
-  {
-    subject: 'Chemistry'
-  }
-]
 
-const Topics: Array<TopicType> = [
+const Header: Array<headerType> = [
   {
-    topic: 5
+    header: "Subject"
   },
   {
-    topic: 9
+    header: "Topic"
   },
   {
-    topic: 10
+    header: "Past Question"
   },
   {
-    topic: 8
+    header: "Success Rate"
   },
 ]
 
-const PastQuestions: Array<PastQuestionType> = [
+const Details: Array<detailsType> = [
   {
-    pastQuestion: 5
+    subject: 'Mathematics',
+    topic: 5,
+    pastQuestion: 5,
+    successRate: 5
   },
   {
-    pastQuestion: 9
+    subject: 'English',
+    topic: 10,
+    pastQuestion: 10,
+    successRate: 10
   },
   {
-    pastQuestion: 10
+    subject: 'Physics',
+    topic: 8,
+    pastQuestion: 8,
+    successRate: 8
   },
   {
-    pastQuestion: 8
+    subject: 'Chemistry',
+    topic: 9,
+    pastQuestion: 9,
+    successRate: 9
   },
 ]
 
-const SuccessRates: Array<SuccessRateType> = [
-  {
-    rate: 5
-  },
-  {
-    rate: 9
-  },
-  {
-    rate: 10
-  },
-  {
-    rate: 8
-  },
-]
 
 const SubjectSummary = (props: Props) => {
   return (
-    <div>
-        <CardContainer className='border-none pt-0 px-0 w-[100%] bg-[#FDFDFC] h-64'>
-            <h4 className='w-full bg-[#07CA9E] text-[#FAF9F8] rounded-tl-md rounded-tr-md py-5 text-xs font-bold pl-4'>Subject Summary</h4>
-            <div className='flex items-center justify-center gap-16 w-[90%] mx-auto mt-5'>
-             <div>
-             <h6 className='text-[#444444] text-xs font-bold'>Subject</h6>
+    <div className="w-[40%]">
+      <CardContainer className="border-none pt-0 px-0 bg-[#FDFDFC] h-64">
+        <h4 className="w-full bg-[#07CA9E] text-[#FAF9F8] rounded-tl-md rounded-tr-md py-5 text-sm font-bold pl-4">
+          Subject Summary
+        </h4>
+
+        <table className='table mb-12'>
+            <thead>
+            <tr className='text-[#444444] text-xs font-bold'>
               {
-                Subjects.map((subject, i) => (
-                  <SubjectsComponent key ={i} subject ={subject.subject}/>
+                Header.map((d, i) => (
+                  <th key={i} className='px-3 pt-3'>{d.header}</th>
+                 
                 ))
               }
-              </div>
-              <div className='flex items-center gap-9'>
-                <div className='flex flex-col items-center justify-center'>
-                  <h6 className='text-[#444444] text-xs font-bold'>Topic</h6>
-                  {
-                    Topics.map((topic, i) => (
-                      <TopicsComponent key={i} topic={topic.topic}/>
-                    ))
-                  }
-                </div>
-                <div className='flex flex-col items-center justify-center'>
-                  <h6 className='text-[#444444] text-xs font-bold'>Past Question</h6>
-                  {
-                    PastQuestions.map((item,i) => (
-                      <PastQuestionComponent key={i} pastQuestion={item.pastQuestion}/>
-                    ))
-                  }
-                </div>
-                <div className='flex flex-col items-center justify-center'>
-                  <h6 className='text-[#444444] text-xs font-bold'>Success Rate</h6>
-                  {
-                    SuccessRates.map((item, i) => (
-                      <SuccessRateComponent key={i} rate ={item.rate}/>
-                    ))
-                  }
-                </div>
-              </div>
-            </div>
+              </tr>
+            </thead>
+            <tbody className='text-xs'>
 
-        </CardContainer>
+              {
+                Details.map((d, i) => (
+                  <tr key={i}>
+                      <td className='pl-7 py-3'>
+                      {d.subject}
+                    </td>
+
+                  
+                  <td className='text-center py-3'>{d.topic}</td>
+                  <td className='text-center py-3'>{d.pastQuestion}</td>
+                  <td className='text-center py-3'>{d.successRate}</td>
+                </tr>
+                ))
+              }
+               
+                </tbody>
+                </table>
+      </CardContainer>
     </div>
-  )
-}
+  );
+};
 
-export default SubjectSummary
+export default SubjectSummary;

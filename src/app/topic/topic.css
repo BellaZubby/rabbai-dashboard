@@ -1,0 +1,20 @@
+.details {
+    overflow-y: scroll;    
+}
+.details::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 7px;
+    margin: 20px;
+}
+.details::-webkit-scrollbar-thumb {
+    background-color:rgba(135, 135, 135, 1);
+    width: 7px;
+    /* height: 2px; */
+    border-radius: 7px;
+}
+.details::-webkit-scrollbar-track {
+    background-color: rgba(225, 225, 225, 1);
+    width: 7px;
+    /* height: 2px; */
+    border-radius: 7px;
+}
