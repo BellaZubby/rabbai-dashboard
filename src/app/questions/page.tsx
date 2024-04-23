@@ -1,10 +1,9 @@
 "use client"
 import React, { useState } from 'react'
 import ParentContainer from '@/components/ui/parentContainer'
-import { AwardIcon, ImageIcon, FilePlus, FileQuestion, FileUp, XIcon } from 'lucide-react'
+import {FileQuestion, FileUp, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import question from '@/assets/question.png'
-import logo from '@/assets/ic_baseline-whatsapp.svg'
 import { Trash2, Edit3, CirclePlus} from 'lucide-react'
 import CardContainer from '@/components/ui/CardContainer'
 import Select from 'react-select'
@@ -90,7 +89,7 @@ const SubjectPage = (props: Props) => {
                     file ? 
                     (<>
                         <div className='relative flex flex-col items-center border p-3 bg-[#c9c9c9]'>
-                          <p className='text-xs'>{file}</p>
+                          <p className='text-xs'> <span className='text-[#000] font-bold text-xs'>File name:</span>{file}</p>
                           <button onClick={handleClearFile} className='absolute top-[-7px] right-[-7px]'><XIcon className='w-4 h-4 text-[#525150]'/></button>
                         </div>
                     
@@ -129,7 +128,7 @@ const SubjectPage = (props: Props) => {
                 <h4 className="text-[#525150] font-bold text-lg">Questions</h4>
                 <div className="text-center mb-1">
                   <p className="text-[#525150] font-bold">
-                    You don't have any questions yet...
+                    You dont have any questions yet...
                   </p>
                   <p className="text-[#525150]">
                     Click{" "}

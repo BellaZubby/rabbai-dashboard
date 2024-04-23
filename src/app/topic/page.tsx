@@ -238,7 +238,7 @@ const TopicPage = (props: Props) => {
             <h4 className="text-[#525150] font-bold text-lg">Topic</h4>
             <div className="text-center mb-1">
               <p className="text-[#333333] font-bold">
-                You don't have any Topic Set yet...
+                You dont have any Topic Set yet...
               </p>
               <p className="text-[#525150]">
                 Click{" "}
