@@ -47,7 +47,7 @@ const CertificationPage = (props: Props) => {
 
   
   return (
-    <div className='w-[96%] mx-auto'>
+    <div className='w-[97%] mx-auto'>
         <h4 className='text-[#525150] font-bold text-sm mb-5'>Certifications</h4>
   <div className=''>
   {
@@ -101,7 +101,7 @@ const CertificationPage = (props: Props) => {
         {pageOpen && 
         
         <div className='flex items-center gap-5'>
-        <CardContainer className='w-[70%] h-[400px] relative'>
+        <CardContainer className=' basis-[68%] mx-auto h-[400px] relative'>
           <table className='table mb-12'>
             <thead>
                 <tr className='text-[#444444] text-sm font-bold'>
@@ -116,7 +116,7 @@ const CertificationPage = (props: Props) => {
             <tbody className='text-center'>
                 <tr className='border'>
                   <td><input type='checkbox'/></td>
-                      <td className='p-3'>
+                      <td className='text-sm'>
                       <span className='flex items-center justify-center gap-1'>
                         <Image src={logo} alt='image' className='w-6 h-6'/>JAMB
                       </span>
@@ -166,7 +166,7 @@ const CertificationPage = (props: Props) => {
           </button>
         </CardContainer>
   
-        <CardContainer className='w-[30%] h-[400px]'>
+        <CardContainer className='w-[28%] h-[400px] mx-auto'>
           <form>
             <label htmlFor='title' className='text-sm text-[#444444] font-bold'>Certification Title</label>
             <div className='relative mt-1'>

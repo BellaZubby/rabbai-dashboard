@@ -74,7 +74,7 @@ const ScoreBoard = (props: Props) => {
             <tr className='text-[#444444] text-xs font-bold'>
               {
                 Header.map((d, i) => (
-                  <th key={i} className='p-4'>{d.header}</th>
+                  <th key={i} className='p-[14px]'>{d.header}</th>
                  
                 ))
               }
