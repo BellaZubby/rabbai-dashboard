@@ -326,7 +326,7 @@ const TopicPage = (props: Props) => {
           </CardContainer>
 
           <CardContainer className="w-[28%] h-[300px]">
-            <table className="border-separate border-spacing-3 text-[15px] text-[#525150]">
+            <table className="border-separate border-spacing-3 text-[15px] text-[#525150] pr-3">
               <thead>
                 <tr>
                   {/* <input type="checkbox" />
