@@ -326,7 +326,7 @@ const TopicPage = (props: Props) => {
           </CardContainer>
 
           <CardContainer className="w-[28%] h-[300px]">
-            <table className="border-separate border-spacing-3 text-[15px] text-[#525150] pr-3">
+            <table className="border-separate border-spacing-3 text-[15px] text-[#525150]">
               <thead>
                 <tr>
                   {/* <input type="checkbox" />
@@ -345,7 +345,7 @@ const TopicPage = (props: Props) => {
                     <td>
                     <span className="flex gap-2">
                       <input onClick={() => setButtonClicked(true)} type="checkbox" className="bg-[#0086FF]"/>
-                      <input type="text" value={d.subject} className={buttonClicked && d.subject === 'Mathematics' ? "bg-[#FAF9F8] border-none drop-shadow-lg py-2 rounded-lg pl-2":"py-2 bg-transparent border border-[#C9C9C9] rounded-lg pl-2"}/>
+                      <input type="text" value={d.subject} className={buttonClicked && d.subject === 'Mathematics' ? "w-5/6 bg-[#FAF9F8] border-none drop-shadow-lg py-2 rounded-lg pl-2":"w-5/6 py-2 bg-transparent border border-[#C9C9C9] rounded-lg pl-2"}/>
                     </span>
                     </td>
                     {/* <input type="checkbox" />
