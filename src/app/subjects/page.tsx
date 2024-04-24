@@ -55,7 +55,7 @@ const SubjectPage = (props: Props) => {
   return (
     <div className='w-[95%] mx-auto'>
         <h4 className='text-[#525150] font-bold text-[16px] mb-5 ml-7'>Subjects</h4>
-  <div className=''>
+  <div className='w-full'>
   {
             showForm ? (
               <ParentContainer className={pageOpen ? "hidden": "drop-shadow-md h-[460px] bg-[#FDFDFC] flex flex-row items-center justify-center gap-5 pt-7"}>
@@ -63,7 +63,7 @@ const SubjectPage = (props: Props) => {
                 <Image src={books} alt='books' className='w-[45%] h-5/6 object-cover rounded-lg'/>
                 <div className="bg-[#CDCBC9] w-[0.5px] h-5/6"></div>
                 
-                <div className="" >
+                <div className="w-[45%]" >
                   <div className=" text-[#525150] text-center mb-3" >
                     <h6 className="text-lg font-bold mb-3">Subjects Creation</h6>
                     <p className=" text-sm font-medium">Subject Details</p>
@@ -152,13 +152,13 @@ const SubjectPage = (props: Props) => {
         </div>
         {pageOpen && 
         
-        <div className='flex gap-4'>
-        <CardContainer className='w-[72%] h-[400px] relative flex flex-col items-center'>
+        <div className='flex w-full gap-4'>
+        <CardContainer className='w-[75%] h-[400px] relative flex flex-col items-center'>
           <table className='mb-9'>
             <thead>
-                <tr className='text-[#444444] text-[12.5px] font-bold'>
+                <tr className='text-[#444444] text-xs font-bold'>
                   <th><input type="checkbox"/></th>
-                  <th className='py-3 px-4'>Certification</th>
+                  <th className='py-3 px-4 text-sm'>Certification</th>
                   <th className='py-3 px-4'>Topic</th>
                   <th className='py-3 px-4'>Questions</th>
                   <th className='py-3 px-4'>Past Questions</th>
