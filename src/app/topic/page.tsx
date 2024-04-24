@@ -325,14 +325,14 @@ const TopicPage = (props: Props) => {
             </div>
           </CardContainer>
 
-          <CardContainer className="w-[27%] h-[300px]">
+          <CardContainer className="w-[28%] h-[300px]">
             <table className="border-separate border-spacing-3 text-[15px] text-[#525150]">
               <thead>
                 <tr>
                   {/* <input type="checkbox" />
                   <td className="px-3 font-bold">Subject</td> */}
                   <th>
-                    <span className="flex gap-5">
+                    <span className="flex gap-3">
                     <input type="checkbox"/>
                     Subject
                   </span>
@@ -343,9 +343,9 @@ const TopicPage = (props: Props) => {
                 {Subjects.map((d, i) => (
                   <tr key={i}>
                     <td>
-                    <span className="flex gap-4">
+                    <span className="flex gap-2">
                       <input onClick={() => setButtonClicked(true)} type="checkbox" className="bg-[#0086FF]"/>
-                      <input type="text" value={d.subject} className={buttonClicked && d.subject === 'Mathematics' ? "bg-[#FAF9F8] border-none drop-shadow-lg py-2 rounded-lg pl-2":"py-2 bg-transparent border border-[#C9C9C9] rounded-lg pl-2"}></input>
+                      <input type="text" value={d.subject} className={buttonClicked && d.subject === 'Mathematics' ? "bg-[#FAF9F8] border-none drop-shadow-lg py-2 rounded-lg pl-2":"py-2 bg-transparent border border-[#C9C9C9] rounded-lg pl-2"}/>
                     </span>
                     </td>
                     {/* <input type="checkbox" />
