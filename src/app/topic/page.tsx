@@ -69,7 +69,7 @@ const TopicPage = (props: Props) => {
   return (
     <div className="w-[95%] mx-auto">
       <h4 className="text-[#525150] font-bold text-[16px] mb-5">Topics</h4>
-      <div className="">
+      <div className="w-full">
         {showForm ? (
           <ParentContainer
             className={
@@ -85,7 +85,7 @@ const TopicPage = (props: Props) => {
               className="w-[45%] h-5/6 object-cover rounded-lg"
             />
 
-            <div className="">
+            <div className="w-[45%]">
               <div className=" text-[#525150] text-center mb-3">
                 <h6 className="text-sm font-bold mb-3">Topic Creation</h6>
                 <p className=" text-lg font-medium">Organizing Topics</p>
@@ -258,7 +258,7 @@ const TopicPage = (props: Props) => {
         )}
       </div>
       {pageOpen && (
-        <div className="flex flex-row-reverse gap-4">
+        <div className="flex flex-row-reverse gap-4 w-full">
           <CardContainer className="w-[72%] h-[300px]">
             <div className="flex justify-between text-[#525150]">
               <h6 className="text-lg font-bold">Details</h6>
@@ -343,7 +343,7 @@ const TopicPage = (props: Props) => {
                 {Subjects.map((d, i) => (
                   <tr key={i}>
                     <td>
-                    <span className="flex gap-5">
+                    <span className="flex gap-4">
                       <input onClick={() => setButtonClicked(true)} type="checkbox" className="bg-[#0086FF]"/>
                       <input type="text" value={d.subject} className={buttonClicked && d.subject === 'Mathematics' ? "bg-[#FAF9F8] border-none drop-shadow-lg py-2 rounded-lg pl-2":"py-2 bg-transparent border border-[#C9C9C9] rounded-lg pl-2"}></input>
                     </span>

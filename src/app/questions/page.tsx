@@ -139,7 +139,7 @@ const SubjectPage = (props: Props) => {
     
                 <button
                   onClick={handleDisplayForm}
-                  className="bg-[#0086FF] text-[#FDFDFC] font-bold text-sm py-2 px-6 w-[23%] rounded-md mb-2 "
+                  className="bg-[#0086FF] text-[#FDFDFC] font-bold text-xs py-3 w-[25%] rounded-md mb-2 "
                 >
                   Create Your First Question
                 </button>
