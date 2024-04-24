@@ -100,8 +100,8 @@ const CertificationPage = (props: Props) => {
         </div>
         {pageOpen && 
         
-        <div className='flex items-center gap-5'>
-        <CardContainer className=' basis-[68%] mx-auto h-[400px] relative'>
+        <div className='flex gap-5'>
+        <CardContainer className='w-[70%] h-[400px] relative'>
           <table className='table mb-12'>
             <thead>
                 <tr className='text-[#444444] text-sm font-bold'>
@@ -166,7 +166,7 @@ const CertificationPage = (props: Props) => {
           </button>
         </CardContainer>
   
-        <CardContainer className='w-[28%] h-[400px] mx-auto'>
+        <CardContainer className='w-[28%] h-[400px]'>
           <form>
             <label htmlFor='title' className='text-sm text-[#444444] font-bold'>Certification Title</label>
             <div className='relative mt-1'>
