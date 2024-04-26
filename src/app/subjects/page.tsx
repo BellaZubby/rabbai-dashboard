@@ -8,6 +8,8 @@ import logo from '@/assets/ic_baseline-whatsapp.svg'
 import { Trash2, Edit3, CirclePlus} from 'lucide-react'
 import CardContainer from '@/components/ui/CardContainer'
 import Select from 'react-select'
+import Navbar from '@/components/Navbar'
+import SideNavbar from '@/components/SideNavbar'
 type Props = {}
 
 const SubjectPage = (props: Props) => {
@@ -53,7 +55,11 @@ const SubjectPage = (props: Props) => {
 
   
   return (
-    <div className='w-[95%] mx-auto'>
+    <>
+      <Navbar/>
+      <div className="flex gap-5 min-h-screen w-full pt-24">
+        <SideNavbar/>
+      <div className='w-[95%] mx-auto'>
         <h4 className='text-[#525150] font-bold text-[16px] mb-5 ml-7'>Subjects</h4>
   <div className='w-full'>
   {
@@ -297,6 +303,9 @@ styles={{
         </div>
         }
     </div>
+    </div>
+    </>
+    
   )
 }
 

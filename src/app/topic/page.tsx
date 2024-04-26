@@ -10,6 +10,8 @@ import CardContainer from "@/components/ui/CardContainer";
 import Select from "react-select";
 import { TopicSubjectsType } from "../shared/types";
 import "./topic.css";
+import Navbar from "@/components/Navbar";
+import SideNavbar from "@/components/SideNavbar";
 type Props = {};
 
 const Subjects: Array<TopicSubjectsType> = [
@@ -67,7 +69,12 @@ const TopicPage = (props: Props) => {
   ];
 
   return (
-    <div className="w-[95%] mx-auto">
+    <>
+    <Navbar/>
+    <div className="flex gap-5 min-h-screen w-full pt-24">
+      <SideNavbar/>
+
+      <div className="w-[95%] mx-auto">
       <h4 className="text-[#525150] font-bold text-[16px] mb-5">Topics</h4>
       <div className="w-full">
         {showForm ? (
@@ -360,6 +367,11 @@ const TopicPage = (props: Props) => {
         </div>
       )}
     </div>
+
+    </div>
+    
+    </>
+    
   );
 };
 

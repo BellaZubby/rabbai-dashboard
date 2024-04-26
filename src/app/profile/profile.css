@@ -1,0 +1,43 @@
+.first-item {
+    grid-area: info;
+}
+.second-item {
+    grid-area: teacher;
+}
+.third-item {
+    grid-area: student;
+}
+.fourth-item {
+    grid-area: staff;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    'info info teacher teacher student student'
+    'info info teacher teacher student student'
+    'staff staff staff staff student student';
+    gap: 10px;
+    grid-template-columns: 162px 162px 152px 152px 155px 155px;
+    
+    background-color: transparent;
+}
+.chat {
+    overflow-y: scroll;    
+}
+.chat::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 7px;
+    margin: 20px;
+}
+.chat::-webkit-scrollbar-thumb {
+    background-color:rgba(135, 135, 135, 1);
+    width: 5px;
+    /* height: 2px; */
+    border-radius: 7px;
+}
+.chat::-webkit-scrollbar-track {
+    background-color: rgba(225, 225, 225, 1);
+    width: 5px;
+    /* height: 2px; */
+    border-radius: 7px;
+}

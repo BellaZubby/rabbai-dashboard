@@ -7,6 +7,9 @@ import question from '@/assets/question.png'
 import { Trash2, Edit3, CirclePlus} from 'lucide-react'
 import CardContainer from '@/components/ui/CardContainer'
 import Select from 'react-select'
+import QuestionsPage from './questionsPage'
+import Navbar from '@/components/Navbar'
+import SideNavbar from '@/components/SideNavbar'
 type Props = {}
 
 const SubjectPage = (props: Props) => {
@@ -68,7 +71,11 @@ const SubjectPage = (props: Props) => {
 
   
   return (
-    <div className='w-[95%] mx-auto'>
+    <>
+    <Navbar/>
+    <div className="flex gap-5 min-h-screen w-full pt-24">
+      <SideNavbar/>
+      <div className='w-[95%] mx-auto'>
         <h4 className='text-[#525150] font-bold text-[16px] mb-5 ml-7'>Questions</h4>
   <div className='w-full'>
   {
@@ -114,7 +121,7 @@ const SubjectPage = (props: Props) => {
                     </>)
                   }
                  </div>
-                 <div className='text-center'><button onClick={handlePageOpen} className='bg-[#0086FF] text-[#FFFFFF] text-xs font-bold py-2 px-3 mt-4 rounded-lg'>Manually Input Past Question</button></div>
+                 <div className='text-center'><button onClick={handlePageOpen} className='bg-[#0086FF] text-[#FFFFFF] text-xs font-bold py-3 px-3 mt-4 rounded-lg'>Manually Input Past Question</button></div>
                 </div>
                 
                 
@@ -151,152 +158,158 @@ const SubjectPage = (props: Props) => {
          
         </div>
         {pageOpen && 
+            <>
         
-        <div className='flex gap-4'>
-        <CardContainer className='w-[72%] h-[400px] relative flex flex-col items-center'>
-          <table className='mb-9'>
-            <thead>
-                <tr className='text-[#444444] text-[12.5px] font-bold'>
-                  <th><input type="checkbox"/></th>
-                  <th className='py-3 px-4'>Certification</th>
-                  <th className='py-3 px-4'>Topic</th>
-                  <th className='py-3 px-4'>Questions</th>
-                  <th className='py-3 px-4'>Past Questions</th>
-                  <th className='py-3 px-4'>Enrolled</th>
-                  <th className='py-3 px-4'>Completion Rate</th>
-                </tr>
-            </thead>
-            <tbody className='text-center text-[14px]'>
-                <tr className='border'>
-                  <td><input type='checkbox'/></td>
-                      <td className='p-3'>
-                      Mathematics
-                    </td>
+              <QuestionsPage/>
+           </>
+//         <div className='flex gap-4'>
+//         <CardContainer className='w-[72%] h-[400px] relative flex flex-col items-center'>
+//           <table className='mb-9'>
+//             <thead>
+//                 <tr className='text-[#444444] text-[12.5px] font-bold'>
+//                   <th><input type="checkbox"/></th>
+//                   <th className='py-3 px-4'>Certification</th>
+//                   <th className='py-3 px-4'>Topic</th>
+//                   <th className='py-3 px-4'>Questions</th>
+//                   <th className='py-3 px-4'>Past Questions</th>
+//                   <th className='py-3 px-4'>Enrolled</th>
+//                   <th className='py-3 px-4'>Completion Rate</th>
+//                 </tr>
+//             </thead>
+//             <tbody className='text-center text-[14px]'>
+//                 <tr className='border'>
+//                   <td><input type='checkbox'/></td>
+//                       <td className='p-3'>
+//                       Mathematics
+//                     </td>
 
                   
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3 text-[#4285F4] font-bold'>100%</td>
-                  <td><Trash2 className='text-[#000000] '/></td>
-                </tr>
-                <tr>
-                  <td><input type='checkbox'/></td>
-                  <td className='p-3'>
-                    English
-                  </td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3 text-[#4285F4] font-bold'>100%</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3 text-[#4285F4] font-bold'>100%</td>
+//                   <td><Trash2 className='text-[#000000] '/></td>
+//                 </tr>
+//                 <tr>
+//                   <td><input type='checkbox'/></td>
+//                   <td className='p-3'>
+//                     English
+//                   </td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3 text-[#4285F4] font-bold'>100%</td>
       
-                  <td><Trash2 className='text-[#000000]'/></td>
-                </tr>
-                <tr>
-                  <td><input type='checkbox'/></td>
+//                   <td><Trash2 className='text-[#000000]'/></td>
+//                 </tr>
+//                 <tr>
+//                   <td><input type='checkbox'/></td>
                   
-                  <td className='p-3'>
-                    Physics
-                  </td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3 text-[#4285F4] font-bold'>100%</td>
+//                   <td className='p-3'>
+//                     Physics
+//                   </td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3 text-[#4285F4] font-bold'>100%</td>
                   
-                  <td><Trash2/></td>
-                </tr>
-                <tr>
-                  <td><input type='checkbox'/></td>
+//                   <td><Trash2/></td>
+//                 </tr>
+//                 <tr>
+//                   <td><input type='checkbox'/></td>
                   
-                  <td className='p-3'>
-                    Chemisty
-                  </td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3'>20</td>
-                  <td className='p-3 text-[#4285F4] font-bold'>100%</td>
+//                   <td className='p-3'>
+//                     Chemisty
+//                   </td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3'>20</td>
+//                   <td className='p-3 text-[#4285F4] font-bold'>100%</td>
                   
-                  <td><Trash2/></td>
-                </tr>
-            </tbody>
-          </table>
-          <button onClick={handleOutputAdd} type='submit' className='flex items-center justify-center gap-4 border-[1.5px] border-[#172041] rounded-lg px-5 py-2 w-[40%]'>
-              <CirclePlus className='w-5 h-5 text-[#000000]'/>
-              <span className='text-[#172041] font-bold text-sm'>Subject</span>
-          </button>
-        </CardContainer>
+//                   <td><Trash2/></td>
+//                 </tr>
+//             </tbody>
+//           </table>
+//           <button onClick={handleOutputAdd} type='submit' className='flex items-center justify-center gap-4 border-[1.5px] border-[#172041] rounded-lg px-5 py-2 w-[40%]'>
+//               <CirclePlus className='w-5 h-5 text-[#000000]'/>
+//               <span className='text-[#172041] font-bold text-sm'>Subject</span>
+//           </button>
+//         </CardContainer>
   
-        <CardContainer className='w-[27%] h-[400px]'>
-          <form>
-            <label htmlFor='title' className='text-sm text-[#444444] font-bold'>Certification Title</label>
-            <div className='relative mt-1'>
-              <Edit3 className='absolute right-2 cursor-pointer bottom-2 text-[#525150]'/>
-              <input type='text' id='title' name='title' className='text-[#444444] text-lg border border-[#CDCBC9] rounded-md w-full py-1 mb-2'/>
-            </div>
-            <label htmlFor='description' className='text-sm text-[#444444] font-bold'>Description</label>
-            <div className='relative mt-1'>
-              <Edit3 className='absolute right-2 cursor-pointer bottom-2 text-[#525150]'/>
-              <textarea id='description' name='description' rows={4} cols={30} className='text-[#444444] text-lg border border-[#CDCBC9] rounded-md w-full'></textarea>
-            </div>
-            <label htmlFor='image-input' className='text-sm text-[#444444] font-bold'>Certifications</label>
-            <div className='relative mt-1'>
-              {/* <Edit3 className='absloute right-0 cursor-pointer text-[#525150]'/> */}
-              <Select
+//         <CardContainer className='w-[27%] h-[400px]'>
+//           <form>
+//             <label htmlFor='title' className='text-sm text-[#444444] font-bold'>Certification Title</label>
+//             <div className='relative mt-1'>
+//               <Edit3 className='absolute right-2 cursor-pointer bottom-2 text-[#525150]'/>
+//               <input type='text' id='title' name='title' className='text-[#444444] text-lg border border-[#CDCBC9] rounded-md w-full py-1 mb-2'/>
+//             </div>
+//             <label htmlFor='description' className='text-sm text-[#444444] font-bold'>Description</label>
+//             <div className='relative mt-1'>
+//               <Edit3 className='absolute right-2 cursor-pointer bottom-2 text-[#525150]'/>
+//               <textarea id='description' name='description' rows={4} cols={30} className='text-[#444444] text-lg border border-[#CDCBC9] rounded-md w-full'></textarea>
+//             </div>
+//             <label htmlFor='image-input' className='text-sm text-[#444444] font-bold'>Certifications</label>
+//             <div className='relative mt-1'>
+//               {/* <Edit3 className='absloute right-0 cursor-pointer text-[#525150]'/> */}
+//               <Select
 
-options={options}
-defaultValue={value}
-onChange={() => setValue}
-placeholder=""
-isSearchable
-isMulti
+// options={options}
+// defaultValue={value}
+// onChange={() => setValue}
+// placeholder=""
+// isSearchable
+// isMulti
 
-styles={{
-  placeholder: (baseStyles, state) => ({
-    ...baseStyles,
-    fontSize: 12,
-    color: "#C9C9C9"
-  }),
-  dropdownIndicator : (baseStyles) => ({
-    ...baseStyles,
-    color: "#4D4D4D",
-    backgroundColor: "FAF9F8"
-  }),
-  container: (baseStyles) => ({
-    ...baseStyles,
-    borderColor: "transparent"
-  }),
-  option: (baseStyles) => ({
-    ...baseStyles,
-    color: "#666666",
-    fontSize: 15,
-    fontWeight: 400,
-    backgroundColor: "transparent"
-  }),
-  valueContainer: (baseStyles) => ({
-    ...baseStyles,
-    borderColor: "transparent",
-    backgroundColor: "FAF9F8"
-  }),
-  singleValue: (baseStyles) => ({
-    ...baseStyles,
-    color: "#666666",
-    fontSize: 15,
-    fontWeight: 400
-  })
-}}
-/>
-            </div>
+// styles={{
+//   placeholder: (baseStyles, state) => ({
+//     ...baseStyles,
+//     fontSize: 12,
+//     color: "#C9C9C9"
+//   }),
+//   dropdownIndicator : (baseStyles) => ({
+//     ...baseStyles,
+//     color: "#4D4D4D",
+//     backgroundColor: "FAF9F8"
+//   }),
+//   container: (baseStyles) => ({
+//     ...baseStyles,
+//     borderColor: "transparent"
+//   }),
+//   option: (baseStyles) => ({
+//     ...baseStyles,
+//     color: "#666666",
+//     fontSize: 15,
+//     fontWeight: 400,
+//     backgroundColor: "transparent"
+//   }),
+//   valueContainer: (baseStyles) => ({
+//     ...baseStyles,
+//     borderColor: "transparent",
+//     backgroundColor: "FAF9F8"
+//   }),
+//   singleValue: (baseStyles) => ({
+//     ...baseStyles,
+//     color: "#666666",
+//     fontSize: 15,
+//     fontWeight: 400
+//   })
+// }}
+// />
+//             </div>
             
-          </form>
+//           </form>
   
-        </CardContainer>
-        </div>
+//         </CardContainer>
+//         </div>
         }
     </div>
+    </div>
+    </>
+    
   )
 }
 

@@ -1,8 +1,7 @@
 "use client"
-
 import React from 'react'
-import { Nav } from './ui/nav'
-import user from '@/assets/Image 4.png'
+import { Nav } from '@/components/ui/nav'
+import logo from '@/assets/logo.png'
 import {
     LayoutGrid,
     Award,
@@ -20,12 +19,11 @@ import Image from 'next/image'
 
 type Props = {}
 
-const SideNavbar = (props: Props) => {
+const ProfileSideNavbar = (props: Props) => {
   return (
     <div className='text-[#525150] px-5'>
-        <div className='mb-7'>
-            <Image src={user} alt='user' className='rounded-full'/>
-            <p className='font-bold mt-2'>Mark John</p>
+        <div className='mb-9'>
+            <Image src={logo} alt='logo' className=''/>
         </div>
         <div className='mb-7 flex gap-5'>
             <MenuIcon/>
@@ -114,4 +112,4 @@ const SideNavbar = (props: Props) => {
   )
 }
 
-export default SideNavbar
+export default ProfileSideNavbar

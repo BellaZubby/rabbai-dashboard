@@ -1,4 +1,5 @@
 import { LucideIcon } from "lucide-react";
+import { StaticImageData } from "next/image";
 
 
 export interface SubjectsType {
@@ -71,4 +72,11 @@ export interface OverallDetailType {
 export interface ratingType {
   subject: string;
   score: number;
+}
+
+export interface teacherType {
+  image: StaticImageData;
+  name: string;
+  tag: string;
+  status: string;
 }

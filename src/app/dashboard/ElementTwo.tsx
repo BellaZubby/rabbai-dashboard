@@ -52,7 +52,7 @@ const Details: Array<detailsType> = [
 
 const SubjectSummary = (props: Props) => {
   return (
-    <div className="w-[40%]">
+    <div className="w-[42%]">
       <CardContainer className="border-none pt-0 px-0 bg-[#FDFDFC] h-64">
         <h4 className="w-full bg-[#07CA9E] text-[#FAF9F8] rounded-tl-md rounded-tr-md py-5 text-sm font-bold pl-4">
           Subject Summary

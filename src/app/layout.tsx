@@ -21,14 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn('min-h-screen w-full bg-[#FAF9F8]', inter.className, {'debug-screens' : process.env.NODE_ENV === "development"})}>
-        <Navbar/>
+        {/* <Navbar/> */}
         <div className="flex gap-5 min-h-screen w-full">
           {/* sidebar */}
           {/* <p className="pt-24 border">sidebar</p> */}
-          <SideNavbar/>
+          {/* <SideNavbar/> */}
           {/* main page */}
         
-          <div className="w-full pt-24">{children}</div>
+          <div className="w-full">{children}</div>
         </div>
         <Footer/>
       </body>

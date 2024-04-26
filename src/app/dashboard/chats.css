@@ -2,19 +2,19 @@
     overflow-y: scroll;    
 }
 .chat::-webkit-scrollbar {
-    width: 7px;
+    width: 6px;
     border-radius: 7px;
     margin: 20px;
 }
 .chat::-webkit-scrollbar-thumb {
     background-color:rgba(135, 135, 135, 1);
-    width: 7px;
+    width: 6px;
     /* height: 2px; */
-    border-radius: 7px;
+    border-radius: 6px;
 }
 .chat::-webkit-scrollbar-track {
     background-color: rgba(225, 225, 225, 1);
-    width: 7px;
+    width: 6px;
     /* height: 2px; */
     border-radius: 7px;
 }
