@@ -24,7 +24,6 @@
     "react-chartjs-2": "^5.2.0",
     "react-day-picker": "^8.10.0",
     "react-dom": "^18",
-    "react-draft-wysiwyg": "^1.15.0",
     "react-select": "^5.8.0",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7"

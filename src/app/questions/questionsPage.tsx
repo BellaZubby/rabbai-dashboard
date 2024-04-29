@@ -1,17 +1,12 @@
 import ParentContainer from "@/components/ui/parentContainer";
 import React, { useState } from "react";
 import Select from "react-select";
-import { Editor } from "react-draft-wysiwyg";
-import { EditorState, convertToRaw } from "draft-js";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { ChevronLeftIcon, ChevronRightIcon, CirclePlus } from "lucide-react";
 
 type Props = {};
 
 const QuestionsPage = (props: Props) => {
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
-  );
+ 
 
   const [value, setValue] = useState(null);
   const options = [
@@ -163,13 +158,7 @@ const QuestionsPage = (props: Props) => {
             />
           </div>
           <div className="border p-3 rounded-lg mt-3 mb-3">
-            <Editor
-              editorState={editorState}
-              onEditorStateChange={setEditorState}
-              wrapperClassName="wrapper-class"
-              editorClassName="editor-class"
-              toolbarClassName="toolbar-class"
-            />
+            
           </div>
           <p className="text-xs">Type in the exam question.</p>
           <hr className="mt-9 bg-[#525150]"></hr>

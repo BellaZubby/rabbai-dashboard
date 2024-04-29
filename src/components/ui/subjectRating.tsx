@@ -39,7 +39,7 @@ const SubjectRating = () => {
           <tr className='text-sm'>
             {
               Header.map((d, i) => (
-                <th key={i} className='px-10 pb-3'>{d.header}</th>
+                <th key={i} className='pl-7 pr-10 pb-3'>{d.header}</th>
               ))
             }
           </tr>
@@ -48,7 +48,7 @@ const SubjectRating = () => {
             {
               Scores.map((d, i) => (
                 <tr key={i} className='text-xs'>
-                  <td className='pl-10 py-1'>{d.subject}</td>
+                  <td className='pl-7 py-1'>{d.subject}</td>
                   <td className='px-6'>
                     <span className='flex items-center justify-center gap-3'>
                       <Progress value={d.score}/>
